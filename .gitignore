@@ -21,3 +21,9 @@ Homestead.yaml
 Homestead.json
 /.vagrant
 .phpunit.result.cache
+
+# Игнорирование служебных файлов препроцессора
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
