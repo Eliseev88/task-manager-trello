@@ -1,0 +1,276 @@
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+}
+
+.navbar {
+    min-height: 100%;
+    background: #2D2D2D;
+    width: 300px;
+
+    & div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+
+        div {
+            font-style: normal;
+            margin: 0 0 0 40px;
+            text-transform: full-width;
+            margin-bottom: 40px;
+
+            p {
+                color: #32B9A1;
+                font-weight: 700;
+                font-size: 24px;
+                margin: 0 0 30px 0;
+            }
+
+            a {
+                display: block;
+                font-weight: 400;
+                font-size: 18px;
+                margin: 0 0 15px 0;
+                text-decoration: none;
+
+                &:hover {
+                    color: #32B9A1;
+
+                    & i {
+                        color: #32B9A1;
+                    }
+                }
+            }
+
+            &:first-child {
+                margin-top: 60px;
+            }
+
+            &:last-child {
+                margin-bottom: 60px;
+            }
+        }
+    }
+}
+
+
+.block {
+    height: 910px;
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: space-between;
+
+    .bigBlock {
+        background: #414141;
+        margin-bottom: 30px;
+        border-radius: 30px;
+        margin-left: 30px;
+
+        &:first-child {
+            height: 300px;
+            max-height: 300px;
+        }
+
+        &:first-child, &:nth-child(2) {
+            width: 750px;
+            max-width: 850px;
+        }
+
+        &:nth-child(2) {
+            height: 450px;
+            max-height: 450px
+        }
+
+        &:nth-child(3), &:nth-child(4) {
+            min-width: 450px;
+            max-width: 500px;
+        }
+
+        &:nth-child(3) {
+            height: 150px;
+        }
+
+        &:nth-child(4) {
+            height: 600px;
+            max-height: 600px
+        }
+
+        .title {
+            width: initial;
+            height: 60px;
+            margin: 0 30px 20px 30px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            & p {
+                color: #32b9a1;
+                font-weight: 400;
+                font-size: 18px;
+            }
+
+            & i {
+                padding: 10px;
+
+                &:hover {
+                    color: #32b9a1;
+                }
+            }
+
+        }
+
+        & .radius {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            &Block {
+                text-align: center;
+                width: 140px;
+                height: 180px;
+                & p {
+                    font-weight: 500;
+                    font-size: 14px;
+                    margin: 0;
+                    margin-bottom: 20px;
+                }
+
+                & div {
+                    width: 100px;
+                    height: 100px;
+                    border: 3px solid #32B9A1;
+                    border-radius: 50%;
+                    margin: 0 auto;
+                    & p {
+                        text-align: center;
+                        margin: auto;
+                        padding: 25px;
+                    }
+                }
+            }
+        }
+
+        & .tusks {
+            width: initial;
+            margin: 0 30px 20px 30px;
+
+            & .tusk {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+
+                height: 60px;
+                width: initial;
+                border: 2px solid #32B9A1;
+                margin: 0 0 20px 0;
+                border-radius: 8px;
+
+                label {
+                    margin-left: 20px;
+                    text-align: center;
+                    .radio {
+                        display: none;
+                    }
+                    .pseudo-radio {
+                        font-size: 16px;
+                        display: none;
+                        position: relative;
+                        width: 1em;
+                        height: 1em;
+                        border: 2px solid #32B9A1;
+                        cursor: pointer;
+                        margin-right: 10px;
+                    }
+                    .radio:checked + .pseudo-radio::before,
+                    .radio:checked + .pseudo-radio::after {
+                        display: block;
+                    }
+                    .pseudo-radio::before,
+                    .pseudo-radio::after {
+                        content: "";
+                        position: absolute;
+                        display: none;
+
+                        bottom: 0.28em;
+                        left: 0.05em;
+                        transform: rotate(40deg);
+
+                        width: 0.6em;
+                        height: 0.2em;
+
+                        background-color: #32B9A1;
+                        border-radius: 1em;
+                    }
+                    .pseudo-radio::after {
+                        bottom: 0.4em;
+                        left: 0.28em;
+                        transform: rotate(-60deg);
+
+                        width: 0.8em;
+                        height: 0.2em;
+                    }
+                }
+
+                div {
+                    display: none;
+                    height: 30px;
+                    margin: auto 10px auto 0;
+                    & a {
+                        width: 30px;
+                        height: 30px;
+                        padding: 10px;
+                        margin: 5px;
+                        &:first-child{
+                            & i {
+                                color: #32B9A1;
+                            }
+                        }
+                         &:last-child {
+                             & i {
+                                 color: #FF0000;
+                             }
+                         }
+                    }
+                }
+
+                &:hover {
+                    .pseudo-radio {
+                        display: inline-block;
+                    }
+                    div {
+                        display: block;
+                    }
+                }
+
+
+            }
+
+            & .activeTusk:hover {
+
+            }
+
+            & .date {
+                font-weight: 500;
+                font-size: 14px;
+                color: #ffffff;
+            }
+        }
+
+        & .date {
+            width: inherit;
+            height: 60px;
+            margin: 0 30px;
+        }
+
+    }
+}
