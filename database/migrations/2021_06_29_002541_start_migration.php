@@ -23,7 +23,7 @@ class StartMigration extends Migration
         //создаем таблицу групп
         Schema::create('groups', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name', '255');
             $table->timestamps();
             $table->softDeletes($column = 'deleted_at');
             //'users' с 'groups' многие ко многим
@@ -32,19 +32,20 @@ class StartMigration extends Migration
         //создаем таблицу досок
         Schema::create('boards', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->bigInteger('group_id')->unsigned();
+            $table->string('name', '255');
             $table->timestamps();
             $table->softDeletes($column = 'deleted_at');
             //внешний ключ на 'groups'
-            $table->foreign('group_id')->references('id')->on('groups');
+            $table->foreignId('group_id')->constrained('groups')
+                ->onUpdate('cascade')
+                ->onDelete('restrict');
 
         });
 
         //создаем темы задач(task_topics)
         Schema::create('task_topics', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name', '255');
             $table->timestamps();
             $table->softDeletes($column = 'deleted_at');
 
@@ -54,21 +55,26 @@ class StartMigration extends Migration
         //создаем таблицу задач(tasks)
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name', '255');
             $table->mediumText('description');
             $table->dateTime('deadline');
             $table->dateTime('period');
 
-            $table->bigInteger('executor_id')->unsigned();
-            $table->bigInteger('initiator_id')->unsigned();
-            $table->bigInteger('board_id')->unsigned();
-            $table->bigInteger('task_topics_id')->unsigned();
+            $table->foreignId('executor_id')->constrained('users')
+                ->onUpdate('cascade')
+                ->onDelete('restrict');
 
-            $table->foreign('executor_id')->references('id')->on('users');
-            $table->foreign('initiator_id')->references('id')->on('users');
-            $table->foreign('board_id')->references('id')->on('boards');
-            $table->foreign('task_topics_id')->references('id')->on('task_topics');
+            $table->foreignId('initiator_id')->constrained('users')
+                ->onUpdate('cascade')
+                ->onDelete('restrict');
 
+            $table->foreignId('board_id')->constrained('boards')
+                ->onUpdate('cascade')
+                ->onDelete('restrict');
+
+            $table->foreignId('task_topics_id')->constrained('task_topics')
+                ->onUpdate('cascade')
+                ->onDelete('restrict');
             $table->timestamps();
             $table->softDeletes($column = 'deleted_at');
 
@@ -77,11 +83,14 @@ class StartMigration extends Migration
 
         //роли пользователей на доске
         Schema::create('group_user', function (Blueprint $table) {
-            $table->bigInteger('user_id')->unsigned();
-            $table->bigInteger('group_id')->unsigned();
+            $table->primary(['user_id','group_id']);
+            $table->foreignId('user_id')->constrained('users')
+                ->onUpdate('cascade')
+                ->onDelete('restrict');
+            $table->foreignId('group_id')->constrained('groups')
+                ->onUpdate('cascade')
+                ->onDelete('restrict');
             $table->enum('role', ['admin','guest', 'user']);
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('group_id')->references('id')->on('groups');
             $table->timestamps();
             $table->softDeletes($column = 'deleted_at');
             //внешние ключи 'users'
