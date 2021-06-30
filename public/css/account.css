@@ -1,0 +1,234 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Montserrat Alternates, sans-serif;
+  color: #ffffff;
+}
+
+body {
+  min-height: 100vh;
+  background: #252525 !important;
+}
+
+header {
+  height: 80px;
+}
+header p {
+  height: 40px;
+  max-height: 60px;
+  text-align: right;
+}
+header img {
+  width: 60px;
+  height: 60px;
+  display: block;
+  margin: 0 20px 0 20px;
+  border-radius: 10px;
+}
+header .link-dropdown {
+  background: none;
+  border: none;
+  outline: none;
+}
+header .link-dropdown strong {
+  font-size: 16px;
+}
+header .link-dropdown strong i {
+  font-size: 16px;
+}
+header .link-dropdown strong:hover {
+  color: #32B9A1;
+}
+header .link-dropdown strong:hover i {
+  color: #32B9A1;
+}
+
+.navbar-style {
+  background: #2D2D2D !important;
+}
+.navbar-style .logo {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px !important;
+  text-transform: uppercase;
+  margin: 0;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+.navbar-style .logo i {
+  font-size: 28px;
+  margin-right: 5px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+.navbar-style .logo:hover {
+  color: #32B9A1 !important;
+}
+.navbar-style .logo:hover i {
+  color: #32B9A1;
+}
+.navbar-style a:hover {
+  color: #32B9A1 !important;
+}
+.navbar-style a:hover i {
+  color: #32B9A1;
+}
+.navbar-style .exit {
+  box-sizing: border-box;
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 20px;
+  margin-left: 30px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+.navbar-style .exit:hover {
+  color: #32B9A1;
+}
+.navbar-style .exit:hover i {
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  color: #32B9A1;
+}
+
+.block .card {
+  background: #414141;
+  border-radius: 30px;
+}
+.block .bigBlock {
+  background: #414141;
+  border-radius: 30px;
+}
+.block .bigBlock .title {
+  width: initial;
+  height: 60px;
+  margin: 0 30px 20px 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.block .bigBlock .title p {
+  color: #32b9a1;
+  font-weight: 400;
+  font-size: 18px;
+}
+.block .bigBlock .title i {
+  padding: 10px;
+}
+.block .bigBlock .title i:hover {
+  color: #32b9a1;
+}
+.block .bigBlock .radius {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.block .bigBlock .radiusBlock {
+  text-align: center;
+  width: 140px;
+  height: 180px;
+}
+.block .bigBlock .radiusBlock p {
+  font-weight: 500;
+  font-size: 14px;
+  margin: 0 0 20px 0;
+}
+.block .bigBlock .radiusBlock div {
+  width: 100px;
+  height: 100px;
+  border: 3px solid #32B9A1;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.block .bigBlock .radiusBlock div p {
+  text-align: center;
+  margin: auto;
+  padding: 25px;
+}
+.block .bigBlock .tusks {
+  width: initial;
+}
+.block .bigBlock .tusks .tusk {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  width: initial;
+  border: 2px solid #32B9A1;
+  margin: 0 0 20px 0;
+  border-radius: 8px;
+}
+.block .bigBlock .tusks .tusk label {
+  margin-left: 20px;
+  text-align: center;
+}
+.block .bigBlock .tusks .tusk label .radio {
+  display: none;
+}
+.block .bigBlock .tusks .tusk label .pseudo-radio {
+  font-size: 16px;
+  display: none;
+  position: relative;
+  width: 1em;
+  height: 1em;
+  border: 2px solid #32B9A1;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.block .bigBlock .tusks .tusk label .radio:checked + .pseudo-radio::before,
+.block .bigBlock .tusks .tusk label .radio:checked + .pseudo-radio::after {
+  display: block;
+}
+.block .bigBlock .tusks .tusk label .pseudo-radio::before,
+.block .bigBlock .tusks .tusk label .pseudo-radio::after {
+  content: "";
+  position: absolute;
+  display: none;
+  bottom: 0.28em;
+  left: 0.05em;
+  transform: rotate(40deg);
+  width: 0.6em;
+  height: 0.2em;
+  background-color: #32B9A1;
+  border-radius: 1em;
+}
+.block .bigBlock .tusks .tusk label .pseudo-radio::after {
+  bottom: 0.4em;
+  left: 0.28em;
+  transform: rotate(-60deg);
+  width: 0.8em;
+  height: 0.2em;
+}
+.block .bigBlock .tusks .tusk div {
+  display: none;
+  height: 30px;
+  margin: auto 10px auto 0;
+}
+.block .bigBlock .tusks .tusk div a {
+  width: 30px;
+  height: 30px;
+  padding: 10px;
+  margin: 5px;
+}
+.block .bigBlock .tusks .tusk div a:first-child i {
+  color: #32B9A1;
+}
+.block .bigBlock .tusks .tusk div a:last-child i {
+  color: #FF0000;
+}
+.block .bigBlock .tusks .tusk:hover .pseudo-radio {
+  display: inline-block;
+}
+.block .bigBlock .tusks .tusk:hover div {
+  display: block;
+}
+.block .bigBlock .tusks .date {
+  font-weight: 500;
+  font-size: 14px;
+  color: #ffffff;
+}
+.block .bigBlock .date {
+  width: inherit;
+  height: 60px;
+  margin: 0 30px;
+}

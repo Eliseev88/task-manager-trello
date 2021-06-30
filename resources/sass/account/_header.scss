@@ -1,0 +1,39 @@
+header {
+    height: 80px;
+
+    & p {
+        height: 40px;
+        max-height: 60px;
+        text-align: right;
+    }
+
+    & img {
+        width: 60px;
+        height: 60px;
+        display: block;
+        margin: 0 20px 0 20px;
+        border-radius: 10px;
+    }
+
+    & .link-dropdown {
+        background: none;
+        border: none;
+        outline: none;
+
+        & strong {
+            font-size: 16px;
+
+            & i {
+                font-size: 16px;
+            }
+
+            &:hover {
+                color: #32B9A1;
+
+                i {
+                    color: #32B9A1;
+                }
+            }
+        }
+    }
+}
