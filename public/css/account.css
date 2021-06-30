@@ -6,161 +6,94 @@
 }
 
 body {
-  min-height: 900px;
-  max-height: 1080px;
-  min-width: 1600px;
-  max-width: 1920px;
-  background: #252525;
+  min-height: 100vh;
+  background: #252525 !important;
 }
 
-header {
-  height: 80px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-header .logo {
-  z-index: 1;
-  height: initial;
-  padding: 24px 20px;
-  width: 260px;
+.logo {
   font-style: normal;
   font-weight: bold;
   font-size: 28px;
   text-transform: uppercase;
   margin: 0;
-  background: #2D2D2D;
 }
-header .logo i {
+.logo i {
   font-size: 28px;
 }
-header .userMenu {
-  width: 350px;
-  margin: 0 40px 0 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  text-transform: full-width;
+
+header {
+  height: 80px;
 }
-header .userMenu p {
+header p {
   height: 40px;
   max-height: 60px;
   text-align: right;
 }
-header .userMenu img {
+header img {
   width: 60px;
   height: 60px;
   display: block;
   margin: 0 20px 0 20px;
   border-radius: 10px;
 }
-header .userMenu button {
-  width: 60px;
-  height: 60px;
+header .link-dropdown {
   background: none;
   border: none;
   outline: none;
 }
-header .userMenu button i {
-  font-size: 28px;
+header .link-dropdown strong {
+  font-size: 16px;
 }
-header .userMenu button:hover {
+header .link-dropdown strong i {
+  font-size: 16px;
+}
+header .link-dropdown strong:hover {
   color: #32B9A1;
 }
-header .userMenu button:hover i {
+header .link-dropdown strong:hover i {
   color: #32B9A1;
 }
 
-.content {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  position: relative;
-}
-
-.navbar {
-  min-height: 100%;
-  background: #2D2D2D;
-  width: 300px;
-}
-.navbar div {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: flex-start;
-}
-.navbar div div {
-  font-style: normal;
-  margin: 0 0 0 40px;
-  text-transform: full-width;
-  margin-bottom: 40px;
-}
-.navbar div div p {
+.nav-title {
   color: #32B9A1;
   font-weight: 700;
   font-size: 24px;
   margin: 0 0 30px 0;
 }
-.navbar div div a {
+
+.navbar-style {
+  background: #2D2D2D !important;
+}
+.navbar-style a:hover {
+  color: #32B9A1 !important;
+}
+.navbar-style a:hover i {
+  color: #32B9A1;
+}
+.navbar-style .exit {
+  box-sizing: border-box;
   display: block;
-  font-weight: 400;
-  font-size: 18px;
-  margin: 0 0 15px 0;
   text-decoration: none;
+  color: #ffffff;
+  font-size: 20px;
+  margin-left: 30px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
-.navbar div div a:hover {
+.navbar-style .exit:hover {
   color: #32B9A1;
 }
-.navbar div div a:hover i {
+.navbar-style .exit:hover i {
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
   color: #32B9A1;
-}
-.navbar div div:first-child {
-  margin-top: 60px;
-}
-.navbar div div:last-child {
-  margin-bottom: 60px;
 }
 
-.block {
-  height: 910px;
-  width: 900px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  align-content: space-between;
+.block .card {
+  background: #414141;
+  border-radius: 30px;
 }
 .block .bigBlock {
   background: #414141;
-  margin-bottom: 30px;
   border-radius: 30px;
-  margin-left: 30px;
-}
-.block .bigBlock:first-child {
-  height: 300px;
-  max-height: 300px;
-}
-.block .bigBlock:first-child, .block .bigBlock:nth-child(2) {
-  width: 750px;
-  max-width: 850px;
-}
-.block .bigBlock:nth-child(2) {
-  height: 450px;
-  max-height: 450px;
-}
-.block .bigBlock:nth-child(3), .block .bigBlock:nth-child(4) {
-  min-width: 450px;
-  max-width: 500px;
-}
-.block .bigBlock:nth-child(3) {
-  height: 150px;
-}
-.block .bigBlock:nth-child(4) {
-  height: 600px;
-  max-height: 600px;
 }
 .block .bigBlock .title {
   width: initial;
@@ -213,7 +146,6 @@ header .userMenu button:hover i {
 }
 .block .bigBlock .tusks {
   width: initial;
-  margin: 0 30px 20px 30px;
 }
 .block .bigBlock .tusks .tusk {
   display: flex;
