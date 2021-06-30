@@ -51,11 +51,11 @@
 <main>
     <h1 class="visually-hidden">Sidebars examples</h1>
     <div class="d-flex flex-column flex-shrink-0 p-3 text-white navbar-style" style="width: 280px;">
-        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none logo">
             <svg class="bi me-2" width="40" height="32">
                 <use xlink:href="#bootstrap"/>
             </svg>
-            <span class="fs-4 logo"><i class="fas fa-tasks icon"></i>Kanban</span>
+            <i class="fas fa-tasks icon"></i>Kanban
         </a>
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
@@ -285,8 +285,6 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
 

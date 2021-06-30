@@ -10,17 +10,6 @@ body {
   background: #252525 !important;
 }
 
-.logo {
-  font-style: normal;
-  font-weight: bold;
-  font-size: 28px;
-  text-transform: uppercase;
-  margin: 0;
-}
-.logo i {
-  font-size: 28px;
-}
-
 header {
   height: 80px;
 }
@@ -54,15 +43,27 @@ header .link-dropdown strong:hover i {
   color: #32B9A1;
 }
 
-.nav-title {
-  color: #32B9A1;
-  font-weight: 700;
-  font-size: 24px;
-  margin: 0 0 30px 0;
-}
-
 .navbar-style {
   background: #2D2D2D !important;
+}
+.navbar-style .logo {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px !important;
+  text-transform: uppercase;
+  margin: 0;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+.navbar-style .logo i {
+  font-size: 28px;
+  margin-right: 5px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+.navbar-style .logo:hover {
+  color: #32B9A1 !important;
+}
+.navbar-style .logo:hover i {
+  color: #32B9A1;
 }
 .navbar-style a:hover {
   color: #32B9A1 !important;
@@ -129,8 +130,7 @@ header .link-dropdown strong:hover i {
 .block .bigBlock .radiusBlock p {
   font-weight: 500;
   font-size: 14px;
-  margin: 0;
-  margin-bottom: 20px;
+  margin: 0 0 20px 0;
 }
 .block .bigBlock .radiusBlock div {
   width: 100px;
