@@ -1,0 +1,128 @@
+form {
+  color: #ffffff;
+  background: #414141;
+  box-sizing: content-box;
+  width: 700px;
+  padding: 10px 30px;
+}
+form .title {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  box-sizing: content-box;
+  margin-bottom: 20px;
+}
+form .title p {
+  font-size: 16px;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: revert;
+  padding: 0;
+  margin: 0 15px 5px 15px;
+}
+form .title p:first-child {
+  font-size: 24px;
+}
+form .title p a {
+  color: #ffffff;
+}
+form .title p a:hover {
+  color: #32B9A1;
+}
+form div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+}
+form div .center {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+form div .center .description, form div .center .actions {
+  margin: 0 10px 20px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: start;
+}
+form div .center .description label, form div .center .description textarea, form div .center .description button, form div .center .actions label, form div .center .actions textarea, form div .center .actions button {
+  margin-bottom: 5px;
+}
+form div .center .description label, form div .center .actions label {
+  display: block;
+}
+form div .center .description textarea, form div .center .actions textarea {
+  width: 420px;
+  background: #6E6E6E;
+  color: #ffffff;
+  outline: none;
+  border: none;
+  margin: 5px 0;
+  border-radius: 15px;
+}
+form div .center .description textarea:hover, form div .center .description textarea:focus, form div .center .actions textarea:hover, form div .center .actions textarea:focus {
+  box-shadow: 0 0 10px #32B9A1;
+}
+form div .center .description button, form div .center .actions button {
+  display: block;
+  color: #ffffff;
+  background: #6E6E6E;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+form div .center .description button:hover, form div .center .actions button:hover {
+  box-shadow: 0 0 10px #32B9A1;
+}
+form div .center .description button:active, form div .center .actions button:active {
+  background: #5E5C5C;
+  box-shadow: 0 0 5px #32b9a1;
+}
+form div .links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+form div .links div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+}
+form div .links div p {
+  font-size: 16px;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: revert;
+  text-align: center;
+  word-wrap: normal;
+}
+form div .links div button {
+  width: inherit;
+  display: block;
+  color: #ffffff;
+  font-size: 14px;
+  background: #6E6E6E;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin: 0 0 5px 0;
+}
+form div .links div button:hover {
+  box-shadow: 0 0 10px #32B9A1;
+}
+form div .links div button:active {
+  background: #5E5C5C;
+  box-shadow: 0 0 5px #32b9a1;
+}
+form div .links div hr {
+  width: inherit;
+}
