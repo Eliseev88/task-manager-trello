@@ -15,7 +15,7 @@ class UpdateMigration extends Migration
     {
         //поле 'users' 'phone' теперь может быть NULL
         Schema::table('users', function (Blueprint $table) {
-            $table->bigInteger('phone')->nullable(true)->change();
+            $table->string('phone')->nullable(true)->change();
         });
 
         //поле 'tasks' 'description' теперь может быть NULL
