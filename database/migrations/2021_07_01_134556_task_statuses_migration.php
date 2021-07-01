@@ -14,14 +14,10 @@ class TaskStatusesMigration extends Migration
     public function up()
     {
         //таблица статусов задачи
-        //статусы: Запланировано(Planned), Принята к исполнению(Accepted for execution),
-        //Выполнена(Completed), Отменена(Canceled), На контроле(On Control),
-        //Возвращена(Returned),
-        Schema::create('task_statuses', function (Blueprint $table){
-           $table->id();
-           $table->string('name', '50')->default('Planned');
-           $table->timestamps();
-           $table->softDeletes($column = 'deleted_at');
+        //статусы: Новая('New') - 1, Срочно('Urgent') - 2,
+        //В работе('Underway') - 3,Остановлена('Stopped') - 4, Отменена(Canceled) - 5,
+        Schema::table('tasks', function (Blueprint $table){
+            $table->enum('task_status', ['1','2', '3', '4', '5']);
         });
 
     }
@@ -33,6 +29,8 @@ class TaskStatusesMigration extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('task_statuses');
+        Schema::table('tasks', function (Blueprint $table){
+            $table->dropColumn('task_status');
+        });
     }
 }
