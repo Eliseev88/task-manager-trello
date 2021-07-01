@@ -24,9 +24,10 @@ class TasksTopicSeeder extends Seeder
     public function generateData(): array
     {
         $data = [];
-        for ($i = 2; $i < 10; $i++) {
+        for ($i = 1; $i < 10; $i++) {
             $data[] = [
                 'name' => $this->faker->catchPhrase,
+                'created_at'  => $this->faker->dateTime,
             ];
         }
         return $data;
