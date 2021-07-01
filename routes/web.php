@@ -24,6 +24,9 @@ Route::get('/tasks', function () {
 Route::get('/account', function () {
     return view('account.index');
 });
+Route::get('/forms', function () {
+    return view('forms.boards.tuskForm');
+});
 
 Auth::routes();
 
