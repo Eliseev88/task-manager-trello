@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/tasks', function () {
+    return view('tasks');
+});
+
 Route::get('/account', function () {
     return view('account.index');
 });
