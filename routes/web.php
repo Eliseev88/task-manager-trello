@@ -32,6 +32,13 @@ Route::get('/formsFull', function () {
     return view('forms.boards.tuskFormFull');
 });
 
+Route::get('/loginForm', function () {
+    return view('forms.auth.login');
+});
+
+Route::get('/registerForm', function () {
+    return view('forms.auth.register');
+});
 
 Auth::routes();
 
