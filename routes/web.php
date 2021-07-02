@@ -28,6 +28,11 @@ Route::get('/forms', function () {
     return view('forms.boards.tuskForm');
 });
 
+Route::get('/formsFull', function () {
+    return view('forms.boards.tuskFormFull');
+});
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
