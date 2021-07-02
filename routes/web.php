@@ -28,6 +28,17 @@ Route::get('/label', function () {
 Route::get('/account', function () {
     return view('account.index');
 });
+Route::get('/forms', function () {
+    return view('forms.boards.tuskForm');
+});
+
+Route::get('/formsFull', function () {
+    return view('forms.boards.tuskFormFull');
+});
+
+Route::get('/registerForm', function () {
+    return view('forms.auth.register');
+});
 
 Auth::routes();
 

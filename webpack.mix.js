@@ -17,3 +17,5 @@ mix.js('resources/js/app.js', 'public/js')
     ]);
 mix.sass('resources/sass/account.scss', 'public/css');
 mix.sass('resources/sass/board.scss', 'public/css');
+mix.sass('resources/sass/tuskForm.scss', 'public/css');
+mix.sass('resources/sass/authForm.scss', 'public/css');
