@@ -27,7 +27,7 @@ class TaskController extends Controller
                 DB::raw('tasks.period as task_period'),
                 DB::raw('users_executors.name as executor_name'),
                 DB::raw('users_initiators.name as initiator_name'),
-                DB::raw('task_topics.name as task_topic_name'), 'tasks.created_at', 'tasks.updated_at'
+                DB::raw('task_topics.name as task_topic_name'), 'tasks.created_at', 'tasks.updated_at', 'task_status'
             )->orderBy('tasks.created_at', 'DESC')
             ->get()->toJson(JSON_PRETTY_PRINT);
     }
@@ -58,7 +58,8 @@ class TaskController extends Controller
             'executor_id',
             'initiator_id',
             'board_id',
-            'task_topics_id'
+            'task_topics_id',
+            'task_status'
         );
         $newTask = Task::create($fields);
 
@@ -87,7 +88,7 @@ class TaskController extends Controller
                 DB::raw('tasks.period as task_period'),
                 DB::raw('users_executors.name as executor_name'),
                 DB::raw('users_initiators.name as initiator_name'),
-                DB::raw('task_topics.name as task_topic_name'), 'tasks.created_at', 'tasks.updated_at'
+                DB::raw('task_topics.name as task_topic_name'), 'tasks.created_at', 'tasks.updated_at', 'task_status'
             )
             ->where('tasks.id', '=', $id)
             ->orderBy('tasks.created_at', 'DESC')
@@ -129,7 +130,8 @@ class TaskController extends Controller
                 'executor_id',
                 'initiator_id',
                 'board_id',
-                'task_topics_id'
+                'task_topics_id',
+                'task_status'
             );
             $fields['updated_at'] = Carbon::now();
             $existingTask->fill($fields)->save();
