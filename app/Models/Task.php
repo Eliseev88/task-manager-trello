@@ -24,6 +24,7 @@ class Task extends Model
             'task_topics_id',
             'created_at',
             'updated_at',
+            'task_status'
         ];
 
 
