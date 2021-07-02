@@ -42,19 +42,27 @@ form {
         justify-content: space-between;
         align-items: start;
 
+
         & .center {
             display: flex;
             flex-direction: column;
             justify-content: space-around;
             align-items: center;
+            width: min-content;
+            margin: 0 20px 0 20px;
 
 
             & .description, & .actions {
-                margin: 0 10px 20px 10px;
+                margin: 0 0 20px 0;
                 display: flex;
                 flex-direction: column;
-                justify-content: space-around;
+                justify-content: start;
                 align-items: start;
+                width: -webkit-fill-available;
+
+                & p {
+                    text-align: justify;
+                }
 
                 & label, & textarea, & button {
                     margin-bottom: 5px;
@@ -98,6 +106,50 @@ form {
                     }
                 }
             }
+
+            & .files {
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+                align-items: start;
+                width: -webkit-fill-available;
+                margin: 0 0 20px 0;
+
+                & .filesInfo {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: start;
+                    flex-wrap: wrap;
+                    width: -webkit-fill-available;
+
+                    & img {
+                        max-height: 100px;
+                        max-width: 200px;
+
+                    }
+
+                    & div {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        align-items: center;
+                        text-align: justify;
+
+                        & a {
+                            color: #ffffff;
+                            display: block;
+                            width: -webkit-fill-available;
+
+                            &:hover {
+                                color: #32B9A1;
+                            }
+                        }
+                    }
+                }
+
+            }
+
         }
 
         & .links {
