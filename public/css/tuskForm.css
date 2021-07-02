@@ -4,6 +4,7 @@ form {
   box-sizing: content-box;
   width: 700px;
   padding: 10px 30px;
+  margin: 0 auto;
 }
 form .title {
   display: flex;
@@ -41,21 +42,53 @@ form div .center {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  margin: 0 20px 0 20px;
 }
-form div .center .description, form div .center .actions {
-  margin: 0 10px 20px 10px;
+form div .center .participants {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: start;
   align-items: start;
+  width: -webkit-fill-available;
 }
-form div .center .description label, form div .center .description textarea, form div .center .description button, form div .center .actions label, form div .center .actions textarea, form div .center .actions button {
+form div .center .participants a {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: #32B9A1;
+  text-decoration: none;
+  margin: 5px 5px 5px 0;
+  border-radius: 5px;
+  color: #ffffff;
+}
+form div .center .participants a img {
+  height: inherit;
+  width: inherit;
+}
+form div .center .description, form div .center .createComments {
+  margin: 0 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  width: -webkit-fill-available;
+}
+form div .center .description p, form div .center .createComments p {
+  text-align: justify;
+}
+form div .center .description label, form div .center .description textarea, form div .center .description button, form div .center .createComments label, form div .center .createComments textarea, form div .center .createComments button {
   margin-bottom: 5px;
 }
-form div .center .description label, form div .center .actions label {
+form div .center .description label, form div .center .createComments label {
   display: block;
 }
-form div .center .description textarea, form div .center .actions textarea {
+form div .center .description textarea, form div .center .createComments textarea {
   width: 420px;
   background: #6E6E6E;
   color: #ffffff;
@@ -64,10 +97,10 @@ form div .center .description textarea, form div .center .actions textarea {
   margin: 5px 0;
   border-radius: 15px;
 }
-form div .center .description textarea:hover, form div .center .description textarea:focus, form div .center .actions textarea:hover, form div .center .actions textarea:focus {
+form div .center .description textarea:hover, form div .center .description textarea:focus, form div .center .createComments textarea:hover, form div .center .createComments textarea:focus {
   box-shadow: 0 0 10px #32B9A1;
 }
-form div .center .description button, form div .center .actions button {
+form div .center .description button, form div .center .createComments button {
   display: block;
   color: #ffffff;
   background: #6E6E6E;
@@ -76,12 +109,210 @@ form div .center .description button, form div .center .actions button {
   border-radius: 10px;
   padding: 5px 10px;
 }
-form div .center .description button:hover, form div .center .actions button:hover {
+form div .center .description button:hover, form div .center .createComments button:hover {
   box-shadow: 0 0 10px #32B9A1;
 }
-form div .center .description button:active, form div .center .actions button:active {
+form div .center .description button:active, form div .center .createComments button:active {
   background: #5E5C5C;
   box-shadow: 0 0 5px #32b9a1;
+}
+form div .center .files {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  width: -webkit-fill-available;
+  margin: 0 0 20px 0;
+}
+form div .center .files .filesImg, form div .center .files .filesDocs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  flex-wrap: wrap;
+  width: -webkit-fill-available;
+  margin: 0 0 15px 0;
+}
+form div .center .files .filesImg .filesDocsLink, form div .center .files .filesDocs .filesDocsLink {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 200px;
+  max-height: 100px;
+  max-width: 200px;
+  background: #6E6E6E;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 26px;
+}
+form div .center .files .filesImg .filesDocsLink img, form div .center .files .filesDocs .filesDocsLink img {
+  width: inherit;
+  height: inherit;
+  border-radius: 10px;
+}
+form div .center .files .filesImg .fileLink, form div .center .files .filesDocs .fileLink {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: justify;
+}
+form div .center .files .filesImg .fileLink a, form div .center .files .filesDocs .fileLink a {
+  color: #ffffff;
+  display: block;
+  width: -webkit-fill-available;
+}
+form div .center .files .filesImg .fileLink a:hover, form div .center .files .filesDocs .fileLink a:hover {
+  color: #32B9A1;
+}
+form div .center .checkList {
+  width: -webkit-fill-available;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+form div .center .checkList .taskCheckList {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  width: -webkit-fill-available;
+  margin: 0 0 20px 0;
+}
+form div .center .checkList .taskCheckList .checkTask {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  width: -webkit-fill-available;
+}
+form div .center .checkList .taskCheckList .checkTask .task {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  width: initial;
+  border: 2px solid #32B9A1;
+  margin: 0 0 10px 0;
+  border-radius: 8px;
+  width: -webkit-fill-available;
+}
+form div .center .checkList .taskCheckList .checkTask .task label {
+  margin-left: 20px;
+  text-align: justify;
+}
+form div .center .checkList .taskCheckList .checkTask .task label .radio {
+  display: none;
+}
+form div .center .checkList .taskCheckList .checkTask .task label .pseudo-radio {
+  font-size: 14px;
+  display: none;
+  position: relative;
+  width: 1em;
+  height: 1em;
+  border: 2px solid #32B9A1;
+  cursor: pointer;
+  margin-right: 10px;
+}
+form div .center .checkList .taskCheckList .checkTask .task label .radio:checked + .pseudo-radio::before,
+form div .center .checkList .taskCheckList .checkTask .task label .radio:checked + .pseudo-radio::after {
+  display: block;
+}
+form div .center .checkList .taskCheckList .checkTask .task label .pseudo-radio::before,
+form div .center .checkList .taskCheckList .checkTask .task label .pseudo-radio::after {
+  content: "";
+  position: absolute;
+  display: none;
+  bottom: 0.28em;
+  left: 0.05em;
+  transform: rotate(40deg);
+  width: 0.6em;
+  height: 0.2em;
+  background-color: #32B9A1;
+  border-radius: 1em;
+}
+form div .center .checkList .taskCheckList .checkTask .task label .pseudo-radio::after {
+  bottom: 0.4em;
+  left: 0.28em;
+  transform: rotate(-60deg);
+  width: 0.8em;
+  height: 0.2em;
+}
+form div .center .checkList .taskCheckList .checkTask .task .editCheckTask {
+  display: none;
+  margin-right: 10px;
+}
+form div .center .checkList .taskCheckList .checkTask .task .editCheckTask a {
+  margin: 5px;
+}
+form div .center .checkList .taskCheckList .checkTask .task .editCheckTask a:first-child i {
+  color: #32B9A1;
+}
+form div .center .checkList .taskCheckList .checkTask .task .editCheckTask a:last-child i {
+  color: #FF0000;
+}
+form div .center .checkList .taskCheckList .checkTask .task:hover .pseudo-radio {
+  display: inline-block;
+}
+form div .center .checkList .taskCheckList .checkTask .task:hover div {
+  display: block;
+}
+form div .center .comments {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  width: -webkit-fill-available;
+}
+form div .center .comments .comment {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  margin: 10px 0;
+  border: 2px solid #32B9A1;
+  border-radius: 10px;
+}
+form div .center .comments .commentHeader, form div .center .comments .commentText, form div .center .comments .commentEdit {
+  margin: 10px;
+}
+form div .center .comments .commentHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: -webkit-fill-available;
+}
+form div .center .comments .commentHeader img {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+}
+form div .center .comments .commentHeader a {
+  text-decoration: none;
+  color: #ffffff;
+}
+form div .center .comments .commentHeader a:hover {
+  color: #32B9A1;
+}
+form div .center .comments .commentText {
+  width: -webkit-fill-available;
+}
+form div .center .comments .commentEdit {
+  width: -webkit-fill-available;
+}
+form div .center .comments .commentEdit a {
+  text-decoration: none;
+  color: #ffffff;
+  margin: 0 5px 5px 0;
+}
+form div .center .comments .commentEdit a:hover {
+  color: #32B9A1;
 }
 form div .links {
   display: flex;
