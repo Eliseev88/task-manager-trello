@@ -1,6 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
+    "/css/authForm.css": "/css/authForm.css",
     "/css/tuskForm.css": "/css/tuskForm.css",
     "/css/board.css": "/css/board.css",
     "/css/account.css": "/css/account.css"
