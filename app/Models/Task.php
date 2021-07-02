@@ -31,9 +31,16 @@ class Task extends Model
     public function board()
     {
         return $this->hasOne(Board::class);
+        //один таск может быть на одной доске
+        //один к одному
     }
-    //один таск может быть на одной доске
-    //один к одному
+
+    public function attachments()
+    {
+        return $this->hasMany(Attachment::class);
+        //У одного таска может быть несколько вложений
+    }
+
 
 
 }
