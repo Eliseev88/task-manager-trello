@@ -1,0 +1,30 @@
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 218px;
+    height: 333px;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: .3rem;
+    outline: 0;
+}
+
+.modal-body {
+    justify-content: center;
+}
+
+.btn-group-sm > .btn, .btn-sm {
+    height: 30px;
+    width: 156px;
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    border-radius: 2rem;
+}
+
+.modal-title {
+    text-align: center;
+}
+
