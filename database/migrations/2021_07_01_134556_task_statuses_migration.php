@@ -17,7 +17,7 @@ class TaskStatusesMigration extends Migration
         //статусы: Новая('New') - 1, Срочно('Urgent') - 2,
         //В работе('Underway') - 3,Остановлена('Stopped') - 4, Отменена(Canceled) - 5,
         Schema::table('tasks', function (Blueprint $table){
-            $table->enum('task_status', ['1','2', '3', '4', '5']);
+            $table->enum('task_status', ['1','2', '3', '4', '5'])->default('1');
         });
 
     }

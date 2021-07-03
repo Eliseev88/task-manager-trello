@@ -114,15 +114,16 @@ class StartMigration extends Migration
 
         //удаляем внешний ключ с 'tasks'  на 'users', 'boards'
         Schema::table('tasks', function (Blueprint $table) {
-            $table->dropForeign(['executor_id']);
-            $table->dropForeign(['initiator_id']);
-            $table->dropForeign(['board_id']);
-            $table->dropForeign(['task_topics_id']);
+            $table->dropConstrainedForeignId('executor_id');
+            $table->dropConstrainedForeignId('initiator_id');
+            $table->dropConstrainedForeignId('board_id');
+            $table->dropConstrainedForeignId('task_topics_id');
         });
 
         //удаляем внешний ключ с 'boards'  на 'groups'
         Schema::table('boards', function (Blueprint $table) {
-            $table->dropForeign(['group_id']);
+            //$table->dropForeign(['group_id']);
+            $table->dropConstrainedForeignId('group_id');
         });
 
         Schema::table('users', function (Blueprint $table) {

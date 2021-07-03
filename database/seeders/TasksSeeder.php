@@ -34,7 +34,8 @@ class TasksSeeder extends Seeder
                 'executor_id' => $this->faker->numberBetween(1,10),
                 'initiator_id' => $this->faker->numberBetween(1,10),
                 'board_id' => $this->faker->numberBetween(1,10),
-                'task_topics_id' => $this->faker->numberBetween(1,2),
+                'task_topics_id' => $this->faker->numberBetween(1,9),
+                'task_status' =>  $this->faker->numberBetween(1,5),
                 'created_at' => $this->faker->dateTime,
                 'updated_at' => $this->faker->dateTime,
             ];
