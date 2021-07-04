@@ -1,8 +1,10 @@
 {
     "/js/app.js": "/js/app.js",
+    "/css/index.css": "/css/index.css",
     "/css/app.css": "/css/app.css",
-    "/css/authForm.css": "/css/authForm.css",
-    "/css/tuskForm.css": "/css/tuskForm.css",
     "/css/board.css": "/css/board.css",
-    "/css/account.css": "/css/account.css"
+    "/css/account.css": "/css/account.css",
+    "/css/login.css": "/css/login.css",
+    "/css/authForm.css": "/css/authForm.css",
+    "/css/tuskForm.css": "/css/tuskForm.css"
 }

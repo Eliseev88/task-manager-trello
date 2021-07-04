@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AccountController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,7 +25,7 @@ Route::get('/label', function () {
     return view('label');
 });
 
-Route::get('/account', function () {
+Route::get('/account1', function () {
     return view('account.index');
 });
 Route::get('/forms', function () {
@@ -42,5 +42,13 @@ Route::get('/registerForm', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+//account
+Route::group(['middleware' => 'auth'], function() {
+    Route::group(['prefix' => 'account'], function() {
+        Route::get('/', AccountController::class)->name('account');
+        Route::get('/logout', function() {
+            \Illuminate\Support\Facades\Auth::logout();
+            return redirect()->route('login');
+        })->name('account.logout');
+    });
+});

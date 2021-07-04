@@ -32,6 +32,11 @@ class TaskController extends Controller
             ->get()->toJson(JSON_PRETTY_PRINT);
     }
 
+    public function getAllUserTasks()
+    {
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *

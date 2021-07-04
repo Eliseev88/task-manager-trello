@@ -20,6 +20,11 @@ class BoardController extends Controller
             ->toJson(JSON_PRETTY_PRINT);
     }
 
+    public function getAllUserBoards()
+    {
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *
