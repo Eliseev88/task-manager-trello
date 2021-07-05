@@ -7,18 +7,21 @@
     <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
 
     <link href="https://getbootstrap.com/docs/5.0/examples/sidebars/sidebars.css" rel="stylesheet"/>
-    <link crossorigin="anonymous" href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet"/>
+    <link crossorigin="anonymous" href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet"/>
     <script crossorigin="anonymous" src="https://kit.fontawesome.com/861689887d.js"></script>
 
     <!-- Favicons -->
-    <link href="https://getbootstrap.com/docs/5.0/assets/img/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+    <link href="https://getbootstrap.com/docs/5.0/assets/img/favicons/apple-touch-icon.png" rel="apple-touch-icon"
+          sizes="180x180"/>
 
     <link href="https://getbootstrap.com/docs/5.0/assets/img/favicons/manifest.json" rel="manifest"/>
-    <link color="#7952b3" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/safari-pinned-tab.svg" rel="mask-icon"/>
+    <link color="#7952b3" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/safari-pinned-tab.svg"
+          rel="mask-icon"/>
     <link href="https://getbootstrap.com/docs/5.0/assets/img/favicons/favicon.ico" rel="icon"/>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet"/>
 
-    <link href="css/board.css"  rel="stylesheet"/>
+    <link href="{{ asset('css/board.css') }}" rel="stylesheet"/>
 
     <title></title>
 </head>
@@ -26,6 +29,7 @@
 
 
 <div id="app">
+
     <header>
         <div class="container header-menu">
             <a class="header-menu_logo" href="#">
@@ -90,7 +94,7 @@
                 <a href="#">Доски</a>
 
 
-                <a href="#">Список задач</a>
+                <a href="">Список задач</a>
 
 
                 <a href="#">статистика</a>
@@ -109,782 +113,141 @@
 
         <div class="board">
 
-            <div class="board-column">
+            @foreach ($userBoards as $allBoard)
+                @foreach($allBoard as $board)
+                    <div class="board-column">
 
-                <div class="board-column_title">
-                    <p class="">Backlog</p>
-                    <a aria-current="page" class="" href="#">
-                        <i class="fas fa-ellipsis-h"></i>
-                    </a>
-                </div>
-
-                <!-- стандартная задача-->
-                <div class="board-column_task">
-                    <div class="task-title">
-                        <a href="#">Название подзадачи</a>
-                        <a aria-current="page" class="" href="#">
-                            <i class="fas fa-ellipsis-h"></i>
-                        </a>
-                    </div>
-                    <div class="task-info">
-                        <a href="#">
-                            <img alt="" class="rounded" height="48" src="https://githut.com/mdo.png" width="48">
-                        </a>
-
-                        <a href="#" aria-current="page" class="">
-                            <i class="far fa-comments"></i>
-                            <span class="">99+</span>
-                        </a>
-
-                        <a href="#" aria-current="page" class="">
-                            <i class="fas fa-paperclip"></i>
-                            <span class="">5+</span>
-                        </a>
-
-                        <div class="task-info_status">
-                            <span class="">Статус</span>
+                        <div class="board-column_title">
+                            <p class="">{{$board['name']}}</p>
+                            <a aria-current="page" class="" href="#">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </a>
                         </div>
-                    </div>
-                </div>
 
-                <!-- стандартная задача с описанием-->
-                <div class="board-column_task">
-                    <div class="task-title">
-                        <a href="#">Название подзадачи</a>
-                        <a aria-current="page" class="" href="#">
-                            <i class="fas fa-ellipsis-h"></i>
-                        </a>
-                    </div>
+                        <!-- стандартная задача-->
+                        <div class="board-column_task">
+                            <div class="task-title">
+                                <a href="#">Название подзадачи</a>
+                                <a aria-current="page" class="" href="#">
+                                    <i class="fas fa-ellipsis-h"></i>
+                                </a>
+                            </div>
+                            <div class="task-info">
+                                <a href="#">
+                                    <img alt="" class="rounded" height="48" src="https://githut.com/mdo.png" width="48">
+                                </a>
 
-                    <div class="task-description">
-                        <p>
-                            Тут допустим будет написано описание задачи или вывод фото.
-                            можно просто вывести здесь статусы.
-                            нужно основательно подумать что мы хотим тут увидеть
-                        </p>
-                    </div>
+                                <a href="#" aria-current="page" class="">
+                                    <i class="far fa-comments"></i>
+                                    <span class="">99+</span>
+                                </a>
 
-                    <div class="task-info">
-                        <a href="#">
-                            <img alt="" class="rounded" height="48" src="https://githut.com/mdo.png" width="48">
-                        </a>
+                                <a href="#" aria-current="page" class="">
+                                    <i class="fas fa-paperclip"></i>
+                                    <span class="">5+</span>
+                                </a>
 
-                        <a href="#" aria-current="page" class="">
-                            <i class="far fa-comments"></i>
-                            <span class="">99+</span>
-                        </a>
-
-                        <a href="#" aria-current="page" class="">
-                            <i class="fas fa-paperclip"></i>
-                            <span class="">5+</span>
-                        </a>
-
-                        <div class="task-info_status">
-                            <span class="">Статус</span>
+                                <div class="task-info_status">
+                                    <span class="">Статус</span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                <!-- стандартная задача с картинкой -->
-                <div class="board-column_task">
-                    <div class="task-title">
-                        <a href="#">Название подзадачи</a>
-                        <a aria-current="page" class="" href="#">
-                            <i class="fas fa-ellipsis-h"></i>
-                        </a>
-                    </div>
+                        <!-- стандартная задача с описанием-->
+                        <div class="board-column_task">
+                            <div class="task-title">
+                                <a href="#">Название подзадачи</a>
+                                <a aria-current="page" class="" href="#">
+                                    <i class="fas fa-ellipsis-h"></i>
+                                </a>
+                            </div>
 
-                    <div class="task-description">
-                        <p>
-                            Тут допустим будет написано описание задачи или вывод фото.
-                            можно просто вывести здесь статусы.
-                            нужно основательно подумать что мы хотим тут увидеть
-                        </p>
-                    </div>
+                            <div class="task-description">
+                                <p>
+                                    Тут допустим будет написано описание задачи или вывод фото.
+                                    можно просто вывести здесь статусы.
+                                    нужно основательно подумать что мы хотим тут увидеть
+                                </p>
+                            </div>
 
-                    <div class="task-image">
-                        <a href="#">
-                            <img src="../../../assets/13.png" alt="doc"/>
-                        </a>
-                    </div>
+                            <div class="task-info">
+                                <a href="#">
+                                    <img alt="" class="rounded" height="48" src="https://githut.com/mdo.png" width="48">
+                                </a>
 
+                                <a href="#" aria-current="page" class="">
+                                    <i class="far fa-comments"></i>
+                                    <span class="">99+</span>
+                                </a>
 
-                    <div class="task-info">
-                        <a href="#">
-                            <img alt="" class="rounded" height="48" src="https://githut.com/mdo.png" width="48">
-                        </a>
+                                <a href="#" aria-current="page" class="">
+                                    <i class="fas fa-paperclip"></i>
+                                    <span class="">5+</span>
+                                </a>
 
-                        <a href="#" aria-current="page" class="">
-                            <i class="far fa-comments"></i>
-                            <span class="">99+</span>
-                        </a>
-
-                        <a href="#" aria-current="page" class="">
-                            <i class="fas fa-paperclip"></i>
-                            <span class="">5+</span>
-                        </a>
-
-                        <div class="task-info_status">
-                            <span class="">Статус</span>
+                                <div class="task-info_status">
+                                    <span class="">Статус</span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                <div class="board-column_addTask">
-                    <a class="#">
-                        <i class="fas fa-plus-square"></i>
-                        Добавить задачу
-                    </a>
-                </div>
+                        <!-- стандартная задача с картинкой -->
+                        <div class="board-column_task">
+                            <div class="task-title">
+                                <a href="#">Название подзадачи</a>
+                                <a aria-current="page" class="" href="#">
+                                    <i class="fas fa-ellipsis-h"></i>
+                                </a>
+                            </div>
 
-            </div>
+                            <div class="task-description">
+                                <p>
+                                    Тут допустим будет написано описание задачи или вывод фото.
+                                    можно просто вывести здесь статусы.
+                                    нужно основательно подумать что мы хотим тут увидеть
+                                </p>
+                            </div>
+
+                            <div class="task-image">
+                                <a href="#">
+                                    <img src="../../../assets/13.png" alt="doc"/>
+                                </a>
+                            </div>
 
 
-            <div class="board-column">
+                            <div class="task-info">
+                                <a href="#">
+                                    <img alt="" class="rounded" height="48" src="https://githut.com/mdo.png" width="48">
+                                </a>
 
-                <div class="board-column_title">
-                    <p class="">Backlog</p>
-                    <a aria-current="page" class="" href="#">
-                        <i class="fas fa-ellipsis-h"></i>
-                    </a>
-                </div>
+                                <a href="#" aria-current="page" class="">
+                                    <i class="far fa-comments"></i>
+                                    <span class="">99+</span>
+                                </a>
 
-                <!-- стандартная задача-->
-                <div class="board-column_task">
-                    <div class="task-title">
-                        <a href="#">Название подзадачи</a>
-                        <a aria-current="page" class="" href="#">
-                            <i class="fas fa-ellipsis-h"></i>
-                        </a>
-                    </div>
-                    <div class="task-info">
-                        <a href="#">
-                            <img alt="" class="rounded" height="48" src="https://githut.com/mdo.png" width="48">
-                        </a>
+                                <a href="#" aria-current="page" class="">
+                                    <i class="fas fa-paperclip"></i>
+                                    <span class="">5+</span>
+                                </a>
 
-                        <a href="#" aria-current="page" class="">
-                            <i class="far fa-comments"></i>
-                            <span class="">99+</span>
-                        </a>
-
-                        <a href="#" aria-current="page" class="">
-                            <i class="fas fa-paperclip"></i>
-                            <span class="">5+</span>
-                        </a>
-
-                        <div class="task-info_status">
-                            <span class="">Статус</span>
+                                <div class="task-info_status">
+                                    <span class="">Статус</span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                <!-- стандартная задача с описанием-->
-                <div class="board-column_task">
-                    <div class="task-title">
-                        <a href="#">Название подзадачи</a>
-                        <a aria-current="page" class="" href="#">
-                            <i class="fas fa-ellipsis-h"></i>
-                        </a>
-                    </div>
-
-                    <div class="task-description">
-                        <p>
-                            Тут допустим будет написано описание задачи или вывод фото.
-                            можно просто вывести здесь статусы.
-                            нужно основательно подумать что мы хотим тут увидеть
-                        </p>
-                    </div>
-
-                    <div class="task-info">
-                        <a href="#">
-                            <img alt="" class="rounded" height="48" src="https://githut.com/mdo.png" width="48">
-                        </a>
-
-                        <a href="#" aria-current="page" class="">
-                            <i class="far fa-comments"></i>
-                            <span class="">99+</span>
-                        </a>
-
-                        <a href="#" aria-current="page" class="">
-                            <i class="fas fa-paperclip"></i>
-                            <span class="">5+</span>
-                        </a>
-
-                        <div class="task-info_status">
-                            <span class="">Статус</span>
+                        <div class="board-column_addTask">
+                            <a class="#">
+                                <i class="fas fa-plus-square"></i>
+                                Добавить задачу
+                            </a>
                         </div>
+
                     </div>
-                </div>
+                @endforeach
+            @endforeach
 
-                <!-- стандартная задача с картинкой -->
-                <div class="board-column_task">
-                    <div class="task-title">
-                        <a href="#">Название подзадачи</a>
-                        <a aria-current="page" class="" href="#">
-                            <i class="fas fa-ellipsis-h"></i>
-                        </a>
-                    </div>
 
-                    <div class="task-description">
-                        <p>
-                            Тут допустим будет написано описание задачи или вывод фото.
-                            можно просто вывести здесь статусы.
-                            нужно основательно подумать что мы хотим тут увидеть
-                        </p>
-                    </div>
-
-                    <div class="task-image">
-                        <a href="#">
-                            <img src="../../../assets/13.png" alt="doc"/>
-                        </a>
-                    </div>
-
-
-                    <div class="task-info">
-                        <a href="#">
-                            <img alt="" class="rounded" height="48" src="https://githut.com/mdo.png" width="48">
-                        </a>
-
-                        <a href="#" aria-current="page" class="">
-                            <i class="far fa-comments"></i>
-                            <span class="">99+</span>
-                        </a>
-
-                        <a href="#" aria-current="page" class="">
-                            <i class="fas fa-paperclip"></i>
-                            <span class="">5+</span>
-                        </a>
-
-                        <div class="task-info_status">
-                            <span class="">Статус</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="board-column_addTask">
-                    <a class="#">
-                        <i class="fas fa-plus-square"></i>
-                        Добавить задачу
-                    </a>
-                </div>
-
-            </div>
-            <div class="board-column">
-
-                <div class="board-column_title">
-                    <p class="">Backlog</p>
-                    <a aria-current="page" class="" href="#">
-                        <i class="fas fa-ellipsis-h"></i>
-                    </a>
-                </div>
-
-                <!-- стандартная задача-->
-                <div class="board-column_task">
-                    <div class="task-title">
-                        <a href="#">Название подзадачи</a>
-                        <a aria-current="page" class="" href="#">
-                            <i class="fas fa-ellipsis-h"></i>
-                        </a>
-                    </div>
-                    <div class="task-info">
-                        <a href="#">
-                            <img alt="" class="rounded" height="48" src="https://githut.com/mdo.png" width="48">
-                        </a>
-
-                        <a href="#" aria-current="page" class="">
-                            <i class="far fa-comments"></i>
-                            <span class="">99+</span>
-                        </a>
-
-                        <a href="#" aria-current="page" class="">
-                            <i class="fas fa-paperclip"></i>
-                            <span class="">5+</span>
-                        </a>
-
-                        <div class="task-info_status">
-                            <span class="">Статус</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- стандартная задача с описанием-->
-                <div class="board-column_task">
-                    <div class="task-title">
-                        <a href="#">Название подзадачи</a>
-                        <a aria-current="page" class="" href="#">
-                            <i class="fas fa-ellipsis-h"></i>
-                        </a>
-                    </div>
-
-                    <div class="task-description">
-                        <p>
-                            Тут допустим будет написано описание задачи или вывод фото.
-                            можно просто вывести здесь статусы.
-                            нужно основательно подумать что мы хотим тут увидеть
-                        </p>
-                    </div>
-
-                    <div class="task-info">
-                        <a href="#">
-                            <img alt="" class="rounded" height="48" src="https://githut.com/mdo.png" width="48">
-                        </a>
-
-                        <a href="#" aria-current="page" class="">
-                            <i class="far fa-comments"></i>
-                            <span class="">99+</span>
-                        </a>
-
-                        <a href="#" aria-current="page" class="">
-                            <i class="fas fa-paperclip"></i>
-                            <span class="">5+</span>
-                        </a>
-
-                        <div class="task-info_status">
-                            <span class="">Статус</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- стандартная задача с картинкой -->
-                <div class="board-column_task">
-                    <div class="task-title">
-                        <a href="#">Название подзадачи</a>
-                        <a aria-current="page" class="" href="#">
-                            <i class="fas fa-ellipsis-h"></i>
-                        </a>
-                    </div>
-
-                    <div class="task-description">
-                        <p>
-                            Тут допустим будет написано описание задачи или вывод фото.
-                            можно просто вывести здесь статусы.
-                            нужно основательно подумать что мы хотим тут увидеть
-                        </p>
-                    </div>
-
-                    <div class="task-image">
-                        <a href="#">
-                            <img src="../../../assets/13.png" alt="doc"/>
-                        </a>
-                    </div>
-
-
-                    <div class="task-info">
-                        <a href="#">
-                            <img alt="" class="rounded" height="48" src="https://githut.com/mdo.png" width="48">
-                        </a>
-
-                        <a href="#" aria-current="page" class="">
-                            <i class="far fa-comments"></i>
-                            <span class="">99+</span>
-                        </a>
-
-                        <a href="#" aria-current="page" class="">
-                            <i class="fas fa-paperclip"></i>
-                            <span class="">5+</span>
-                        </a>
-
-                        <div class="task-info_status">
-                            <span class="">Статус</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="board-column_addTask">
-                    <a class="#">
-                        <i class="fas fa-plus-square"></i>
-                        Добавить задачу
-                    </a>
-                </div>
-
-            </div>
-            <div class="board-column">
-
-                <div class="board-column_title">
-                    <p class="">Backlog</p>
-                    <a aria-current="page" class="" href="#">
-                        <i class="fas fa-ellipsis-h"></i>
-                    </a>
-                </div>
-
-                <!-- стандартная задача-->
-                <div class="board-column_task">
-                    <div class="task-title">
-                        <a href="#">Название подзадачи</a>
-                        <a aria-current="page" class="" href="#">
-                            <i class="fas fa-ellipsis-h"></i>
-                        </a>
-                    </div>
-                    <div class="task-info">
-                        <a href="#">
-                            <img alt="" class="rounded" height="48" src="https://githut.com/mdo.png" width="48">
-                        </a>
-
-                        <a href="#" aria-current="page" class="">
-                            <i class="far fa-comments"></i>
-                            <span class="">99+</span>
-                        </a>
-
-                        <a href="#" aria-current="page" class="">
-                            <i class="fas fa-paperclip"></i>
-                            <span class="">5+</span>
-                        </a>
-
-                        <div class="task-info_status">
-                            <span class="">Статус</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- стандартная задача с описанием-->
-                <div class="board-column_task">
-                    <div class="task-title">
-                        <a href="#">Название подзадачи</a>
-                        <a aria-current="page" class="" href="#">
-                            <i class="fas fa-ellipsis-h"></i>
-                        </a>
-                    </div>
-
-                    <div class="task-description">
-                        <p>
-                            Тут допустим будет написано описание задачи или вывод фото.
-                            можно просто вывести здесь статусы.
-                            нужно основательно подумать что мы хотим тут увидеть
-                        </p>
-                    </div>
-
-                    <div class="task-info">
-                        <a href="#">
-                            <img alt="" class="rounded" height="48" src="https://githut.com/mdo.png" width="48">
-                        </a>
-
-                        <a href="#" aria-current="page" class="">
-                            <i class="far fa-comments"></i>
-                            <span class="">99+</span>
-                        </a>
-
-                        <a href="#" aria-current="page" class="">
-                            <i class="fas fa-paperclip"></i>
-                            <span class="">5+</span>
-                        </a>
-
-                        <div class="task-info_status">
-                            <span class="">Статус</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- стандартная задача с картинкой -->
-                <div class="board-column_task">
-                    <div class="task-title">
-                        <a href="#">Название подзадачи</a>
-                        <a aria-current="page" class="" href="#">
-                            <i class="fas fa-ellipsis-h"></i>
-                        </a>
-                    </div>
-
-                    <div class="task-description">
-                        <p>
-                            Тут допустим будет написано описание задачи или вывод фото.
-                            можно просто вывести здесь статусы.
-                            нужно основательно подумать что мы хотим тут увидеть
-                        </p>
-                    </div>
-
-                    <div class="task-image">
-                        <a href="#">
-                            <img src="../../../assets/13.png" alt="doc"/>
-                        </a>
-                    </div>
-
-
-                    <div class="task-info">
-                        <a href="#">
-                            <img alt="" class="rounded" height="48" src="https://githut.com/mdo.png" width="48">
-                        </a>
-
-                        <a href="#" aria-current="page" class="">
-                            <i class="far fa-comments"></i>
-                            <span class="">99+</span>
-                        </a>
-
-                        <a href="#" aria-current="page" class="">
-                            <i class="fas fa-paperclip"></i>
-                            <span class="">5+</span>
-                        </a>
-
-                        <div class="task-info_status">
-                            <span class="">Статус</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="board-column_addTask">
-                    <a class="#">
-                        <i class="fas fa-plus-square"></i>
-                        Добавить задачу
-                    </a>
-                </div>
-
-            </div>
-            <div class="board-column">
-
-                <div class="board-column_title">
-                    <p class="">Backlog</p>
-                    <a aria-current="page" class="" href="#">
-                        <i class="fas fa-ellipsis-h"></i>
-                    </a>
-                </div>
-
-                <!-- стандартная задача-->
-                <div class="board-column_task">
-                    <div class="task-title">
-                        <a href="#">Название подзадачи</a>
-                        <a aria-current="page" class="" href="#">
-                            <i class="fas fa-ellipsis-h"></i>
-                        </a>
-                    </div>
-                    <div class="task-info">
-                        <a href="#">
-                            <img alt="" class="rounded" height="48" src="https://githut.com/mdo.png" width="48">
-                        </a>
-
-                        <a href="#" aria-current="page" class="">
-                            <i class="far fa-comments"></i>
-                            <span class="">99+</span>
-                        </a>
-
-                        <a href="#" aria-current="page" class="">
-                            <i class="fas fa-paperclip"></i>
-                            <span class="">5+</span>
-                        </a>
-
-                        <div class="task-info_status">
-                            <span class="">Статус</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- стандартная задача с описанием-->
-                <div class="board-column_task">
-                    <div class="task-title">
-                        <a href="#">Название подзадачи</a>
-                        <a aria-current="page" class="" href="#">
-                            <i class="fas fa-ellipsis-h"></i>
-                        </a>
-                    </div>
-
-                    <div class="task-description">
-                        <p>
-                            Тут допустим будет написано описание задачи или вывод фото.
-                            можно просто вывести здесь статусы.
-                            нужно основательно подумать что мы хотим тут увидеть
-                        </p>
-                    </div>
-
-                    <div class="task-info">
-                        <a href="#">
-                            <img alt="" class="rounded" height="48" src="https://githut.com/mdo.png" width="48">
-                        </a>
-
-                        <a href="#" aria-current="page" class="">
-                            <i class="far fa-comments"></i>
-                            <span class="">99+</span>
-                        </a>
-
-                        <a href="#" aria-current="page" class="">
-                            <i class="fas fa-paperclip"></i>
-                            <span class="">5+</span>
-                        </a>
-
-                        <div class="task-info_status">
-                            <span class="">Статус</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- стандартная задача с картинкой -->
-                <div class="board-column_task">
-                    <div class="task-title">
-                        <a href="#">Название подзадачи</a>
-                        <a aria-current="page" class="" href="#">
-                            <i class="fas fa-ellipsis-h"></i>
-                        </a>
-                    </div>
-
-                    <div class="task-description">
-                        <p>
-                            Тут допустим будет написано описание задачи или вывод фото.
-                            можно просто вывести здесь статусы.
-                            нужно основательно подумать что мы хотим тут увидеть
-                        </p>
-                    </div>
-
-                    <div class="task-image">
-                        <a href="#">
-                            <img src="../../../assets/13.png" alt="doc"/>
-                        </a>
-                    </div>
-
-
-                    <div class="task-info">
-                        <a href="#">
-                            <img alt="" class="rounded" height="48" src="https://githut.com/mdo.png" width="48">
-                        </a>
-
-                        <a href="#" aria-current="page" class="">
-                            <i class="far fa-comments"></i>
-                            <span class="">99+</span>
-                        </a>
-
-                        <a href="#" aria-current="page" class="">
-                            <i class="fas fa-paperclip"></i>
-                            <span class="">5+</span>
-                        </a>
-
-                        <div class="task-info_status">
-                            <span class="">Статус</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="board-column_addTask">
-                    <a class="#">
-                        <i class="fas fa-plus-square"></i>
-                        Добавить задачу
-                    </a>
-                </div>
-
-            </div>
-            <div class="board-column">
-
-                <div class="board-column_title">
-                    <p class="">Backlog</p>
-                    <a aria-current="page" class="" href="#">
-                        <i class="fas fa-ellipsis-h"></i>
-                    </a>
-                </div>
-
-                <!-- стандартная задача-->
-                <div class="board-column_task">
-                    <div class="task-title">
-                        <a href="#">Название подзадачи</a>
-                        <a aria-current="page" class="" href="#">
-                            <i class="fas fa-ellipsis-h"></i>
-                        </a>
-                    </div>
-                    <div class="task-info">
-                        <a href="#">
-                            <img alt="" class="rounded" height="48" src="https://githut.com/mdo.png" width="48">
-                        </a>
-
-                        <a href="#" aria-current="page" class="">
-                            <i class="far fa-comments"></i>
-                            <span class="">99+</span>
-                        </a>
-
-                        <a href="#" aria-current="page" class="">
-                            <i class="fas fa-paperclip"></i>
-                            <span class="">5+</span>
-                        </a>
-
-                        <div class="task-info_status">
-                            <span class="">Статус</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- стандартная задача с описанием-->
-                <div class="board-column_task">
-                    <div class="task-title">
-                        <a href="#">Название подзадачи</a>
-                        <a aria-current="page" class="" href="#">
-                            <i class="fas fa-ellipsis-h"></i>
-                        </a>
-                    </div>
-
-                    <div class="task-description">
-                        <p>
-                            Тут допустим будет написано описание задачи или вывод фото.
-                            можно просто вывести здесь статусы.
-                            нужно основательно подумать что мы хотим тут увидеть
-                        </p>
-                    </div>
-
-                    <div class="task-info">
-                        <a href="#">
-                            <img alt="" class="rounded" height="48" src="https://githut.com/mdo.png" width="48">
-                        </a>
-
-                        <a href="#" aria-current="page" class="">
-                            <i class="far fa-comments"></i>
-                            <span class="">99+</span>
-                        </a>
-
-                        <a href="#" aria-current="page" class="">
-                            <i class="fas fa-paperclip"></i>
-                            <span class="">5+</span>
-                        </a>
-
-                        <div class="task-info_status">
-                            <span class="">Статус</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- стандартная задача с картинкой -->
-                <div class="board-column_task">
-                    <div class="task-title">
-                        <a href="#">Название подзадачи</a>
-                        <a aria-current="page" class="" href="#">
-                            <i class="fas fa-ellipsis-h"></i>
-                        </a>
-                    </div>
-
-                    <div class="task-description">
-                        <p>
-                            Тут допустим будет написано описание задачи или вывод фото.
-                            можно просто вывести здесь статусы.
-                            нужно основательно подумать что мы хотим тут увидеть
-                        </p>
-                    </div>
-
-                    <div class="task-image">
-                        <a href="#">
-                            <img src="../../../assets/13.png" alt="doc"/>
-                        </a>
-                    </div>
-
-
-                    <div class="task-info">
-                        <a href="#">
-                            <img alt="" class="rounded" height="48" src="https://githut.com/mdo.png" width="48">
-                        </a>
-
-                        <a href="#" aria-current="page" class="">
-                            <i class="far fa-comments"></i>
-                            <span class="">99+</span>
-                        </a>
-
-                        <a href="#" aria-current="page" class="">
-                            <i class="fas fa-paperclip"></i>
-                            <span class="">5+</span>
-                        </a>
-
-                        <div class="task-info_status">
-                            <span class="">Статус</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="board-column_addTask">
-                    <a class="#">
-                        <i class="fas fa-plus-square"></i>
-                        Добавить задачу
-                    </a>
-                </div>
-
-            </div>
         </div>
     </div>
 </div>
