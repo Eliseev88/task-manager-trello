@@ -17,9 +17,9 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/tasks', function () {
-    return view('tasks');
-});
+//Route::get('/tasks', function () {
+    //return view('tasks');
+//});
 
 Route::get('/label', function () {
     return view('label');
@@ -51,4 +51,21 @@ Route::group(['middleware' => 'auth'], function() {
             return redirect()->route('login');
         })->name('account.logout');
     });
+});
+
+//Задачи
+Route::group([
+    'prefix' => '/tasks',
+    'as' => 'tasks::',
+    'middleware' => 'auth',
+
+], function (){
+    Route::get('/', [\App\Http\Controllers\BladeTaskController::class, 'index'])
+        ->name('');
+
+    //Route::get('/{idCategory}', [NewsController::class,'news'])
+    //    ->name('::idCategory');
+
+    //Route::get('/{idCategory}/{id}', [NewsController::class,'article'])
+    //    ->name('::idCategory::id');
 });
