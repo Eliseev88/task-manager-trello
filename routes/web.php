@@ -17,9 +17,12 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/tasks', function () {
-    return view('tasks');
-});
+//Route::get('/tasks', function () {
+//    return view('tasks');
+//});
+Route::get('/tasks/user_{id}', [\App\Http\Controllers\EBoardController::class, 'getUserGroups'])
+    ->name('tasks')
+    ->where('id', '\d+');
 
 Route::get('/label', function () {
     return view('label');
