@@ -1,0 +1,76 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Montserrat&family=Montserrat+Subrayada:wght@700&display=swap);
+.color__bg-nav {
+  background-color: #414141;
+}
+
+.font-montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+.font-montserrat-alternate {
+  font-family: Montserrat Alternates, sans-serif;
+}
+.font-montserrat-subrayada {
+  font-family: "Montserrat Subrayada", sans-serif;
+}
+
+.font-size__brand {
+  font-size: 28px;
+  font-weight: bold;
+}
+.font-size__link {
+  font-size: 24px;
+}
+.font-size__content {
+  font-size: 70px;
+  font-weight: 700;
+}
+.font-size__paragraph {
+  font-size: 20px;
+  max-width: 308px;
+}
+
+.margin__content {
+  margin-top: 80px;
+}
+.margin__bott {
+  margin-bottom: 60px;
+}
+
+.width__content-right {
+  width: 70%;
+}
+.width__content-left {
+  width: 30%;
+}
+
+.content-link {
+  border: 1px solid #414141;
+  padding: 12px 19px;
+  background-color: #414141;
+  box-sizing: border-box;
+  border-radius: 10px;
+  color: white;
+  transition: all 0.2s linear;
+}
+.content-link:hover {
+  color: #414141;
+  background-color: white;
+  text-decoration: none;
+}
+
+@media (max-width: 991px) {
+  .width__content-left {
+    width: auto;
+    text-align: center;
+  }
+
+  .width__content-right {
+    width: auto;
+    margin: 60px 0;
+  }
+
+  .font-size__paragraph {
+    max-width: none;
+  }
+}

@@ -49,4 +49,8 @@ class User extends Authenticatable
         return $this->belongsToMany(Group::class);
     }
 
+    public function getId()
+    {
+        return $this->id;
+    }
 }
