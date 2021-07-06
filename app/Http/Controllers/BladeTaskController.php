@@ -12,6 +12,43 @@ class BladeTaskController extends Controller
 {
     public function index()
     {
+        $array = [];
+        $sortTask = [];
+        $tasks = $this->allUserTask();
+        $topics = $this->tasksTopic();
+        foreach ($topics as $topic => $item) {
+            if (!in_array($item->task_topic, $array)) {
+                $array[] = $item->task_topic;
+            }
+        }
+        foreach ($tasks as $task => $taskItem){
+            for($i = 0; $i < count($tasks)-1; $i++){
+                    if($array[$i] == $taskItem->task_topic){
+                        $sortTask[$array[$i]][] = $taskItem;
+                    }
+                }
+            }
+       return view('layout.tasks', ['tasks' => $sortTask]);;
+
+    }
+
+    public function tasksTopic()
+    {
+        $user = Auth::user()->id;
+
+        $topic = DB::table('tasks')
+                ->leftJoin('task_topics', 'tasks.task_topics_id', '=', 'task_topics.id')
+                ->where('executor_id', $user)
+                ->orWhere('initiator_id', $user)
+                ->get([
+                    'task_topics.name as task_topic'
+                ]);
+
+        return $topic;
+    }
+
+    public function allUserTask()
+    {
         $user = Auth::user()->id;
 
         $tasks = DB::table('tasks')
@@ -30,27 +67,7 @@ class BladeTaskController extends Controller
                 'boards.name as board_name',
                 'groups.name as group_name']);
 
-        //dd($this->tasksTopic());
-       //return view('layouts.tasks', ['tasks' => $tasks]);
-        return view('tasks');
-
+        return($tasks);
     }
-
-
-    public function tasksTopic()
-    {
-        $user = Auth::user()->id;
-
-            $topic = DB::table('tasks')
-                ->leftJoin('task_topics', 'tasks.task_topics_id', '=', 'task_topics.id')
-                ->where('executor_id', $user)
-                ->orWhere('initiator_id', $user)
-                ->get([
-                    'task_topics.name as task_topic'
-                ]);
-
-        return $topic;
-    }
-
 
 }

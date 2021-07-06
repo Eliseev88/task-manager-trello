@@ -1,23 +1,18 @@
+@foreach($tasks as $task => $item)
+    <div class="board-column">
 
+        <div class="board-column_title">
+            <p class="">{{$task}}</p>
+            <a aria-current="page" class="" href="#">
+                <i class="fas fa-ellipsis-h"></i>
+            </a>
+        </div>
 
-    @foreach($tasks as $task => $item)
-        @php
-            //dd($item);
+    @foreach($item as $key => $taskObject)
 
-        @endphp
-
-        <div class="board-column">
-
-            <div class="board-column_title">
-                <p class="">{{$item->task_topic}}</p>
-                <a aria-current="page" class="" href="#">
-                    <i class="fas fa-ellipsis-h"></i>
-                </a>
-            </div>
-            <!-- стандартная задача с описанием-->
             <div class="board-column_task">
                 <div class="task-title">
-                    <a href="#">{{$item->name}}</a>
+                    <a href="#">{{$taskObject->name}}</a>
                     <a aria-current="page" class="" href="#">
                         <i class="fas fa-ellipsis-h"></i>
                     </a>
@@ -25,7 +20,7 @@
 
                 <div class="task-description">
                     <p>
-                        {{$item->description}}
+                        {{$taskObject->description}}
                     </p>
                 </div>
 
@@ -45,18 +40,19 @@
                     </a>
 
                     <div class="task-info_status">
-                        <span class="">{{$item->task_status}}</span>
+                        <span class="">Статус {{$taskObject->task_status}}</span>
                     </div>
                 </div>
             </div>
-
-            <div class="board-column_addTask">
-                <a class="#">
-                    <i class="fas fa-plus-square"></i>
-                    Добавить задачу
-                </a>
-            </div>
-
-
     @endforeach
 
+                <!-- стандартная задача с описанием-->
+                <div class="board-column_addTask">
+                    <a class="#">
+                        <i class="fas fa-plus-square"></i>
+                            Добавить задачу
+                            </a>
+                </div>
+
+            </div>
+@endforeach
