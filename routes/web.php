@@ -63,9 +63,4 @@ Route::group([
     Route::get('/', [\App\Http\Controllers\BladeTaskController::class, 'index'])
         ->name('');
 
-    //Route::get('/{idCategory}', [NewsController::class,'news'])
-    //    ->name('::idCategory');
-
-    //Route::get('/{idCategory}/{id}', [NewsController::class,'article'])
-    //    ->name('::idCategory::id');
 });
