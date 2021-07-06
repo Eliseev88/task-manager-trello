@@ -26,7 +26,7 @@ class EBoardController extends Controller
 
         }
 //        dd($userBoards);
-        return view('tasks', ['userBoards' => $userBoards]);
+        return view('board', ['userBoards' => $userBoards]);
     }
 
 
