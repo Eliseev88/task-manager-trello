@@ -125,5 +125,29 @@
 </script>
 
 <script src="https://getbootstrap.com/docs/5.0/examples/sidebars/sidebars.js"></script>
+<script>
+
+    const addTasks = document.querySelectorAll('.addtask');
+
+    function handleClick(event) {
+
+        if(event.target.classList.contains('fa-plus-square')){
+            event.target.parentNode.parentNode.nextElementSibling.style.visibility === 'visible' ?
+                event.target.parentNode.parentNode.nextElementSibling.style.visibility = 'hidden':
+                event.target.parentNode.parentNode.nextElementSibling.style.visibility = 'visible';
+            console.log( event.target.parentNode.parentNode.nextElementSibling);
+        }else{
+            event.target.parentNode.nextElementSibling.style.visibility === 'visible' ?
+                event.target.parentNode.nextElementSibling.style.visibility = 'hidden':
+                event.target.parentNode.nextElementSibling.style.visibility = 'visible';
+            console.log( event.target.parentNode.nextElementSibling);
+        }
+    }
+
+    addTasks.forEach((addTask) => {
+        addTask.addEventListener('click', handleClick);
+    });
+
+</script>
 </body>
 </html>

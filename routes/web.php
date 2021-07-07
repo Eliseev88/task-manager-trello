@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AccountController;
+use \App\Http\Controllers\BladeTaskController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -60,7 +61,9 @@ Route::group([
     'middleware' => 'auth',
 
 ], function (){
-    Route::get('/', [\App\Http\Controllers\BladeTaskController::class, 'index'])
-        ->name('');
+    Route::get('/', [BladeTaskController::class, 'index'])
+        ->name('index');
+    Route::get('/create', [BladeTaskController::class, 'create'])
+        ->name('create');
 
 });

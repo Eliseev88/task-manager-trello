@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Task;
-use Illuminate\Database\Query\JoinClause;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -12,6 +11,7 @@ class BladeTaskController extends Controller
 {
     public function index()
     {
+        $user = Auth::user()->id;
         $array = [];
         $sortTask = [];
         $tasks = $this->allUserTask();
@@ -21,14 +21,15 @@ class BladeTaskController extends Controller
                 $array[] = $item->task_topic;
             }
         }
-        foreach ($tasks as $task => $taskItem){
-            for($i = 0; $i < count($tasks)-1; $i++){
-                    if($array[$i] == $taskItem->task_topic){
-                        $sortTask[$array[$i]][] = $taskItem;
-                    }
+        foreach ($tasks as $key =>  $taskItem){
+            foreach ($array as $arr_key => $item){
+                if($array[$arr_key] == $taskItem->task_topic){
+                    $sortTask[$array[$arr_key]][] = $taskItem;
                 }
             }
-       return view('layout.tasks', ['tasks' => $sortTask]);;
+        }
+
+        return view('layout.tasks', ['tasks' => $sortTask, 'user' => $user]);
 
     }
 
@@ -68,6 +69,22 @@ class BladeTaskController extends Controller
                 'groups.name as group_name']);
 
         return($tasks);
+    }
+
+    public function create(Request $request)
+    {
+        //dd($request);
+        $task = Task::create([
+            'task_topics_id' => $request->task_topics_id,
+            'name' => $request->name,
+            'description' => $request->description,
+            'executor_id' => $request->executor_id,
+            'initiator_id' => $request->initiator_id,
+            'board_id' => $request->board_id,
+        ]);
+
+        $task->save();
+        return redirect()->route('tasks::index');
     }
 
 }
