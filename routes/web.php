@@ -3,6 +3,7 @@
 use App\Http\Controllers\GroupAccountController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AccountController;
+use \App\Http\Controllers\BladeTaskController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,7 +20,7 @@ Route::get('/', function () {
 });
 
 //Route::get('/tasks', function () {
-//    return view('tasks');
+    //return view('tasks');
 //});
 Route::get('/tasks/user_{id}', [\App\Http\Controllers\EBoardController::class, 'getUserGroups'])
     ->name('tasks')
@@ -55,6 +56,20 @@ Route::group(['middleware' => 'auth'], function() {
             return redirect()->route('login');
         })->name('account.logout');
     });
+});
+
+//Задачи
+Route::group([
+    'prefix' => '/tasks',
+    'as' => 'tasks::',
+    'middleware' => 'auth',
+
+], function (){
+    Route::get('/', [BladeTaskController::class, 'index'])
+        ->name('index');
+    Route::get('/create', [BladeTaskController::class, 'create'])
+        ->name('create');
+
 });
 
 //Вывод всех досок на которых участвует пользователь
