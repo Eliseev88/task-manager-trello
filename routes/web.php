@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GroupAccountController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AccountController;
 /*
@@ -52,3 +53,12 @@ Route::group(['middleware' => 'auth'], function() {
         })->name('account.logout');
     });
 });
+
+//Вывод всех досок на которых участвует пользователь
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/group/create', [GroupAccountController::class, 'create'])->name('group.create');
+Route::put('/group/store', [GroupAccountController::class, 'store'])->name('group.store');
+Route::get('/group/edit/{id}', [GroupAccountController::class, 'edit'])->name('group.edit');
+Route::put('/group/update/{id}', [GroupAccountController::class, 'update'])->name('group.update');
+Route::get('/group/destroy/{id}', [GroupAccountController::class, 'destroy'])->name('group.destroy');
+Route::get('/group', [GroupAccountController::class, 'index'])->name('group');
